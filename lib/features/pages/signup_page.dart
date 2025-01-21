@@ -1,6 +1,8 @@
+import 'package:bloac_taskapp/features/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
+  static route() => MaterialPageRoute(builder: (context) => const SignUpPage());
   const SignUpPage({super.key});
 
   @override
@@ -88,7 +90,9 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: signUpUser,
+                onPressed: () {
+                  LoginPage.route();
+                },
                 child: const Text(
                   'Sign Up',
                   style: TextStyle(

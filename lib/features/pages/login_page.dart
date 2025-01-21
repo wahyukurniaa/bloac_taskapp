@@ -1,6 +1,8 @@
+import 'package:bloac_taskapp/features/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  static route() => MaterialPageRoute(builder: (context) => const LoginPage());
   const LoginPage({super.key});
 
   @override
@@ -18,12 +20,6 @@ class _LoginPageState extends State<LoginPage> {
     passwordController.dispose();
     formKey.currentState!.validate();
     super.dispose();
-  }
-
-  void loginUser() {
-    if (formKey.currentState!.validate()) {
-//
-    }
   }
 
   @override
@@ -73,7 +69,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: loginUser,
+                onPressed: () {
+                  SignUpPage.route();
+                },
                 child: const Text(
                   'Sign Up',
                   style: TextStyle(
